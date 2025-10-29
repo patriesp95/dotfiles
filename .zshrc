@@ -6,7 +6,6 @@
 # -----------------
 # Zsh configuration
 # -----------------
-
 #
 # History
 #
@@ -202,3 +201,7 @@ _open_project(){
 
 zle -N _open_project
 bindkey "^k" _open_project
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+PROMPT="%n @ %d: "
