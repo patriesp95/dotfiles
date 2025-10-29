@@ -183,6 +183,28 @@ function mkcd() {
     mkdir "$*" && cd "$_"
 }
 
+function prompt_exit_code() {
+  local EXIT="$?"
+
+  if [ $EXIT -eq 0 ]; then
+    echo -n green
+  else
+    echo -n red
+  fi
+}
+
+
+function git_prompt_info {
+  inside_git_repo="$(git rev-parse --is-inside-work-tree 2>/dev/null)"
+
+  if [ "$inside_git_repo" ]; then
+    current_branch=$(git branch --show-current)
+    print -P " on %{%F{yellow}%}$current_branch%{%f%}"
+  else
+    echo ""
+  fi
+}
+
 # bindings 
 _reverse_search() {
   local selected_command=$(fc -rl 1 | awk '{$1="";print substr($0,2)}' | fzf)
@@ -205,4 +227,5 @@ bindkey "^k" _open_project
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-PROMPT="%n @ %d: "
+#PROMPT="%n @ %d: "
+PROMPT='%{%F{$(prompt_exit_code)}%}%n%{%f%} @ %d$(git_prompt_info):'
