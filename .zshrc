@@ -136,6 +136,7 @@ alias ll="eza -l"
 alias la="eza -alhF"
 alias dev="cd '$HOME/Developer"
 alias cdc="dev; cd code"
+alias cls="clear"
 
 # use: ps2 <process>
 alias ps2='ps -ef | grep -v $$ | grep -i'
