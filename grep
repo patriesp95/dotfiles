@@ -39,16 +39,6 @@ function docker_list() {
   fi
 }
 
-function gc {
-  git add -A
-
-  if [ -z "$1" ]; then
-    git commit - S
-  else
-    git commit -S -m"$1"
-  fi
-}
-
 function mkcd() {
     mkdir "$*" && cd "$_"
 }
