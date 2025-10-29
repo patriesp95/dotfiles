@@ -12,7 +12,7 @@ alias cdc="dev; cd code"
 alias ps2='ps -ef | grep -v $$ | grep -i'
 
 alias gaa="git add -A"
-alias gc="git commit"
+#alias gc="git commit"
 alias gs="git status -sb"
 alias gf="git fetch --all -p"
 alias gps="git push"
