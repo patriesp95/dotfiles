@@ -193,7 +193,6 @@ function prompt_exit_code() {
   fi
 }
 
-
 function git_prompt_info {
   inside_git_repo="$(git rev-parse --is-inside-work-tree 2>/dev/null)"
 
@@ -228,4 +227,5 @@ bindkey "^k" _open_project
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 #PROMPT="%n @ %d: "
+source "$DOTFILES_PATH/scripts/core/_main.sh"
 PROMPT='%{%F{$(prompt_exit_code)}%}%n%{%f%} @ %d$(git_prompt_info):'
