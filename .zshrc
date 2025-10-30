@@ -228,6 +228,5 @@ bindkey "^k" _open_project
 
 export DOTFILES_PATH="$HOME/.dotfiles/"
 
-#PROMPT="%n @ %d: "
 source "$DOTFILES_PATH/scripts/core/_main.sh"
-#PROMPT='%{%F{$(prompt_exit_code)}%}%n%{%f%} @ %d$(git_prompt_info):'
+PROMPT='%{%F{$(prompt_exit_code)}%}%n%{%f%} @ %d$(git_prompt_info):'
